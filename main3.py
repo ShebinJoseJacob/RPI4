@@ -78,7 +78,7 @@ def main(argv):
     print('MODEL: ' + modelfile)
     
     picam2 = Picamera2()
-    picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (4608,2592)}))
+    picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (4092,4092)}))
     picam2.start()
 
     with ImageImpulseRunner(modelfile) as runner:
@@ -131,7 +131,7 @@ def main(argv):
                                 post_done = 0        
 
                 # the image will be resized and cropped and displayed
-                cv2.imshow('image', cv2.cvtColor(cropped, cv2.COLOR_GRAY2RGB))
+                cv2.imshow('image', cv2.cvtColor(cropped, cv2.COLOR_RGB2BGR))
                 cv2.waitKey(1)
 
         finally:
