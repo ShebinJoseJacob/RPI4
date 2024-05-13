@@ -36,9 +36,11 @@ i =0
 
 while i<120:
     if(input("Enter")!=1):
+        '''
         job = picam2.autofocus_cycle(wait=False)
         success = picam2.wait(job)
         if success:
+        '''
             picam2.capture_file(f'threepin{i}.jpg')
             i+=1
 
